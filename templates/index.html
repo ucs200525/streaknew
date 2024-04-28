@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Selection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Topic</h1>
+        <form method="POST" action="/save_streak">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <select name="choice" id="topicSelect">
+                <option value="1">Railway Project</option>
+                <option value="2">DOYO</option>
+                <option value="3">Semester</option>
+                <option value="4">Meditation</option>
+                <option value="5">Cyber Security</option>
+            </select>
+            <div id="innerChoices"></div>
+            <label for="descriptionChoice">Do you want to enter a description?</label>
+            <input type="radio" id="yes" name="descriptionChoice" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="descriptionChoice" value="no" checked>
+            <label for="no">No</label>
+            <div id="descriptionField" style="display: none;">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description">
+            </div>
+            <button type="submit">Save Streak</button>
+        </form>
+        <div id="streakAmount"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
